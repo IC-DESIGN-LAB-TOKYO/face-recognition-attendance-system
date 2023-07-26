@@ -1,5 +1,12 @@
 <script>
+    import { ref } from 'vue'
+
 const columns = [
+  {
+    name: 'index',
+    label: '#',
+    field: 'index'
+  },
   {
     name: 'name',
     required: true,
@@ -18,7 +25,7 @@ const columns = [
   { name: 'iron', label: 'Iron (%)', field: 'iron', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10) }
 ]
 
-const rows = [
+const seed = [
   {
     name: 'Frozen Yogurt',
     calories: 159,
@@ -121,11 +128,24 @@ const rows = [
   }
 ]
 
+// we generate lots of rows here
+let rows = []
+for (let i = 0; i < 1000; i++) {
+  rows = rows.concat(seed.slice(0).map(r => ({ ...r })))
+}
+rows.forEach((row, index) => {
+  row.index = index
+})
+
 export default {
   setup () {
     return {
       columns,
-      rows
+      rows,
+
+      pagination: ref({
+        rowsPerPage: 0
+      })
     }
   }
 }
@@ -149,15 +169,17 @@ export default {
             <div class="col-12">
                 <div class="q-pa-md">
                     <q-table
+                      style="height: 400px"
                       flat bordered
-                      title="Employee Lists"
+                      title="Treats"
                       :rows="rows"
                       :columns="columns"
-                      row-key="name"
-                      dark
-                      color="amber"
+                      row-key="index"
+                      virtual-scroll
+                      v-model:pagination="pagination"
+                      :rows-per-page-options="[0]"
                     />
-                  </div>
+                </div>
             </div>
         </div>
     </div>
