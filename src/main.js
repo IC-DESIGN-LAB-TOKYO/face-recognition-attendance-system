@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
@@ -21,11 +20,14 @@ myApp.use(Quasar, {
   plugins: {}, // import Quasar plugins and add here
 })
 
-// Assumes you have a <div id="app"></div> in your index.html
-myApp.mount('#app')
-myApp.use(router)
-myApp.use(createPinia())
+const pinia = createPinia()
+pinia.use(({ store }) => {
+    store.router = markRaw(router)
+  },
+)
 
-// const app = createApp(App)
-// createApp(App).mount('#app')
+myApp.use(router)
+myApp.use(pinia)
+myApp.mount('#app')
+
 
