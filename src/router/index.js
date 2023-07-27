@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import DashboardIndex from "@/views/dashboard/Index.vue";
 import SettingIndex from "@/views/settings/Index.vue";
 import EmployeeIndex from "@/views/employees/Index.vue";
-import ProfileIndex from "@/views/profile/Index.vue";
+import AttendanceIndex from "@/views/attendance/Index.vue";
 import ProjectsIndex from "@/views/projects/Index.vue";
 import ProjectaddIndex from "@/views/project-add/Index.vue";
 import ProjecteditIndex from "@/views/project-edit/Index.vue";
@@ -41,9 +41,9 @@ const router = createRouter({
       meta: { requiresAuth: true, authLayout: true },
     },
     {
-      path: "/profile",
-      name: "profile",
-      component: ProfileIndex,
+      path: "/attendance",
+      name: "attendance",
+      component: AttendanceIndex,
       meta: { requiresAuth: true, authLayout: true },
     },
     {

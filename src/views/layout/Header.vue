@@ -15,13 +15,13 @@ const menuList = [
     path: '/dashboard'
   },
   {
-    icon: 'mdi-circle-outline',
-    label: 'Profile',
+    icon: 'mdi-chart-bar',
+    label: 'Attendance',
     separator: true,
-    path: '/profile'
+    path: '/attendance'
   },
   {
-    icon: 'mdi-circle-outline',
+    icon: 'mdi-sitemap-outline',
     label: 'Projects',
     separator: true,
     path: '/projects'
@@ -45,7 +45,7 @@ const menuList = [
     path: '/project-detail'
   },
   {
-    icon: 'mdi-circle-outline',
+    icon: 'mdi-login',
     label: 'Login & Register v1',
     separator: true,
     path: '/login'

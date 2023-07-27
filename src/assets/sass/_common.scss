@@ -1,0 +1,12 @@
+a:-webkit-any-link {
+    text-decoration: none !important;
+    color: #333333;
+}
+.custom-border{
+    border-top: 1px solid #eeeeee;
+    .common-ttl{
+        font-size: 18px;
+        color: #333333;
+        font-weight: 400;
+    }
+}
