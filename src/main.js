@@ -15,6 +15,9 @@ import '@quasar/extras/mdi-v7/mdi-v7.css'
 // Import Quasar css
 import 'quasar/src/css/index.sass'
 
+// Main SCSS
+import '@/assets/sass/style.scss'
+
 const myApp = createApp(App)
 
 myApp.use(Quasar, {
