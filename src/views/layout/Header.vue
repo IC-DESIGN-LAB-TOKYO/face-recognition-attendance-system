@@ -15,6 +15,48 @@ const menuList = [
     path: '/dashboard'
   },
   {
+    icon: 'mdi-circle-outline',
+    label: 'Profile',
+    separator: true,
+    path: '/profile'
+  },
+  {
+    icon: 'mdi-circle-outline',
+    label: 'Projects',
+    separator: true,
+    path: '/projects'
+  },
+  {
+    icon: 'mdi-circle-outline',
+    label: 'Project Add',
+    separator: true,
+    path: '/project-add'
+  },
+  {
+    icon: 'mdi-circle-outline',
+    label: 'Project Edit',
+    separator: true,
+    path: '/project-edit'
+  },
+  {
+    icon: 'mdi-circle-outline',
+    label: 'Project Detail',
+    separator: true,
+    path: '/project-detail'
+  },
+  {
+    icon: 'mdi-circle-outline',
+    label: 'Login & Register v1',
+    separator: true,
+    path: '/login'
+  },
+  {
+    icon: 'mdi-circle-outline',
+    label: 'Blank Page',
+    separator: true,
+    path: '/blank'
+  },
+  {
     icon: 'mdi-account-group',
     label: 'Employee',
     separator: true,
