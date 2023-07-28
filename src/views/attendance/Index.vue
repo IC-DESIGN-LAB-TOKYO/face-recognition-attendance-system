@@ -16,7 +16,7 @@ const columns = [
     format: val => `${val}`,
     sortable: true
   },
-  { name: 'type', align: 'left', label: 'Type', field: 'type'},
+  { name: 'type', align: 'left', label: 'Type', field: row => row.type},
   { name: 'regular', align: 'left', label: 'Regular', field: 'regular', sortable: true },
   { name: 'overtime', align: 'left', label: 'Overtime', field: 'overtime' },
   { name: 'sickleave', align: 'left', label: 'Sick Leave', field: 'sickleave' },
@@ -28,7 +28,7 @@ const columns = [
 const seed = [
   {
     name: 'Ko Kyaw Thant Zin',
-    type: Fulltime,
+    type: 'Fulltime',
     regular: 6.0,
     overtime: 24,
     sickleave: 4.0,
@@ -38,7 +38,7 @@ const seed = [
   },
   {
     name: 'Ma Khine Wut Yee',
-    type: 237,
+    type: 'Fulltime',
     regular: 9.0,
     overtime: 37,
     sickleave: 4.3,
@@ -48,7 +48,7 @@ const seed = [
   },
   {
     name: 'Ma Naw Mar Mar',
-    type: 262,
+    type: 'Fulltime',
     regular: 16.0,
     overtime: 23,
     sickleave: 6.0,
@@ -58,7 +58,7 @@ const seed = [
   },
   {
     name: 'Ma Myat Thazin Aung',
-    type: 305,
+    type: 'Fulltime',
     regular: 3.7,
     overtime: 67,
     sickleave: 4.3,
@@ -68,7 +68,7 @@ const seed = [
   },
   {
     name: 'Ko Kyaw Thant Zin',
-    type: 356,
+    type: 'Freelancer',
     regular: 16.0,
     overtime: 49,
     sickleave: 3.9,
@@ -78,7 +78,7 @@ const seed = [
   },
   {
     name: 'Ma Khine Wut Yee',
-    type: 375,
+    type: 'Fulltime',
     regular: 0.0,
     overtime: 94,
     sickleave: 0.0,
@@ -88,7 +88,7 @@ const seed = [
   },
   {
     name: 'Ma Naw Mar Mar',
-    type: 392,
+    type: 'Parttime',
     regular: 0.2,
     overtime: 98,
     sickleave: 0,
@@ -98,7 +98,7 @@ const seed = [
   },
   {
     name: 'Ma Myat Thazin Aung',
-    type: 408,
+    type: 'Parttime',
     regular: 3.2,
     overtime: 87,
     sickleave: 6.5,
