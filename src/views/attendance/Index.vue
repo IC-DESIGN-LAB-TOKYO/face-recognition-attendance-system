@@ -17,21 +17,21 @@ const columns = [
     sortable: true
   },
   { name: 'type', align: 'left', label: 'Type', field: row => row.type},
-  { name: 'regular', align: 'left', label: 'Regular', field: 'regular', sortable: true },
-  { name: 'overtime', align: 'left', label: 'Overtime', field: 'overtime' },
+  { name: 'regular', align: 'left', label: 'Regular', field: row => row.regular, sortable: true },
+  { name: 'overtime', align: 'left', label: 'Overtime', field: row => row.overtime },
   { name: 'sickleave', align: 'left', label: 'Sick Leave', field: 'sickleave' },
   { name: 'pto', align: 'left', label: 'PTO', field: 'pto' },
   { name: 'paidholiday', align: 'left', label: 'Paid Holiday', field: 'paidholiday', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10) },
   { name: 'totalhour', align: 'left', label: 'Total hour', field: 'totalhour', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10) }
 ]
 
-const seed = [
+const employee = [
   {
     name: 'Ko Kyaw Thant Zin',
     type: 'Fulltime',
-    regular: 6.0,
-    overtime: 24,
-    sickleave: 4.0,
+    regular: '180 Hours',
+    overtime: '24 hours',
+    sickleave: '-',
     pto: 87,
     paidholiday: '14%',
     totalhour: '1%'
@@ -39,9 +39,9 @@ const seed = [
   {
     name: 'Ma Khine Wut Yee',
     type: 'Fulltime',
-    regular: 9.0,
-    overtime: 37,
-    sickleave: 4.3,
+    regular: '180 Hours',
+    overtime: '18 hours',
+    sickleave: '-',
     pto: 129,
     paidholiday: '8%',
     totalhour: '1%'
@@ -49,9 +49,9 @@ const seed = [
   {
     name: 'Ma Naw Mar Mar',
     type: 'Fulltime',
-    regular: 16.0,
-    overtime: 23,
-    sickleave: 6.0,
+    regular: '180 Hours',
+    overtime: '18 hours',
+    sickleave: '-',
     pto: 337,
     paidholiday: '6%',
     totalhour: '7%'
@@ -59,9 +59,9 @@ const seed = [
   {
     name: 'Ma Myat Thazin Aung',
     type: 'Fulltime',
-    regular: 3.7,
-    overtime: 67,
-    sickleave: 4.3,
+    regular: '180 Hours',
+    overtime: '-',
+    sickleave: '-',
     pto: 413,
     paidholiday: '3%',
     totalhour: '8%'
@@ -69,9 +69,9 @@ const seed = [
   {
     name: 'Ko Kyaw Thant Zin',
     type: 'Freelancer',
-    regular: 16.0,
-    overtime: 49,
-    sickleave: 3.9,
+    regular: '171 Hours',
+    overtime: '18 hours',
+    sickleave: '-',
     pto: 327,
     paidholiday: '7%',
     totalhour: '16%'
@@ -79,9 +79,9 @@ const seed = [
   {
     name: 'Ma Khine Wut Yee',
     type: 'Fulltime',
-    regular: 0.0,
-    overtime: 94,
-    sickleave: 0.0,
+    regular: '170 Hours',
+    overtime: '18 hours',
+    sickleave: '-',
     pto: 50,
     paidholiday: '0%',
     iron: '0%'
@@ -89,9 +89,9 @@ const seed = [
   {
     name: 'Ma Naw Mar Mar',
     type: 'Parttime',
-    regular: 0.2,
-    overtime: 98,
-    sickleave: 0,
+    regular: '169 Hours',
+    overtime: '18 hours',
+    sickleave: '-',
     pto: 38,
     paidholiday: '0%',
     iron: '2%'
@@ -99,9 +99,9 @@ const seed = [
   {
     name: 'Ma Myat Thazin Aung',
     type: 'Parttime',
-    regular: 3.2,
-    overtime: 87,
-    sickleave: 6.5,
+    regular: '168 Hours',
+    overtime: '18 hours',
+    sickleave: '-',
     pto: 562,
     paidholiday: '0%',
     iron: '45%'
@@ -111,7 +111,7 @@ const seed = [
 // we generate lots of rows here
 let rows = []
 for (let i = 0; i < 10; i++) {
-  rows = rows.concat(seed.slice(0).map(r => ({ ...r })))
+  rows = rows.concat(employee.slice(0).map(r => ({ ...r })))
 }
 rows.forEach((row, index) => {
   row.index = index
