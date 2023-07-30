@@ -17,12 +17,12 @@ const columns = [
     sortable: true
   },
   { name: 'type', align: 'left', label: 'Type', field: row => row.type},
-  { name: 'regular', align: 'left', label: 'Regular', field: row => row.regular, sortable: true },
+  { name: 'regular', align: 'left', label: 'Regular', field: row => row.regular },
   { name: 'overtime', align: 'left', label: 'Overtime', field: row => row.overtime },
   { name: 'sickleave', align: 'left', label: 'Sick Leave', field: 'sickleave' },
   { name: 'pto', align: 'left', label: 'PTO', field: 'pto' },
-  { name: 'paidholiday', align: 'left', label: 'Paid Holiday', field: 'paidholiday', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10) },
-  { name: 'totalhour', align: 'left', label: 'Total hour', field: 'totalhour', sortable: true, sort: (a, b) => parseInt(a, 10) - parseInt(b, 10) }
+  { name: 'paidholiday', align: 'left', label: 'Paid Holiday', field: 'paidholiday'},
+  { name: 'totalhour', align: 'left', label: 'Total hour', field: 'totalhour' }
 ]
 
 const employee = [
@@ -32,9 +32,9 @@ const employee = [
     regular: '180 Hours',
     overtime: '24 hours',
     sickleave: '-',
-    pto: 87,
-    paidholiday: '14%',
-    totalhour: '1%'
+    pto: '-',
+    paidholiday: 'Fullmoon of Warso',
+    totalhour: '204 Hours'
   },
   {
     name: 'Ma Khine Wut Yee',
@@ -42,9 +42,9 @@ const employee = [
     regular: '180 Hours',
     overtime: '18 hours',
     sickleave: '-',
-    pto: 129,
-    paidholiday: '8%',
-    totalhour: '1%'
+    pto: '-',
+    paidholiday: 'Fullmoon of Warso',
+    totalhour: '198 Hours'
   },
   {
     name: 'Ma Naw Mar Mar',
@@ -52,9 +52,9 @@ const employee = [
     regular: '180 Hours',
     overtime: '18 hours',
     sickleave: '-',
-    pto: 337,
-    paidholiday: '6%',
-    totalhour: '7%'
+    pto: '-',
+    paidholiday: 'Fullmoon of Warso',
+    totalhour: '198 Hours'
   },
   {
     name: 'Ma Myat Thazin Aung',
@@ -62,9 +62,9 @@ const employee = [
     regular: '180 Hours',
     overtime: '-',
     sickleave: '-',
-    pto: 413,
-    paidholiday: '3%',
-    totalhour: '8%'
+    pto: '-',
+    paidholiday: 'Fullmoon of Warso',
+    totalhour: '180 Hours'
   },
   {
     name: 'Ko Kyaw Thant Zin',
@@ -72,9 +72,9 @@ const employee = [
     regular: '171 Hours',
     overtime: '18 hours',
     sickleave: '-',
-    pto: 327,
-    paidholiday: '7%',
-    totalhour: '16%'
+    pto: '-',
+    paidholiday: 'Fullmoon of Warso',
+    totalhour: '189 Hours'
   },
   {
     name: 'Ma Khine Wut Yee',
@@ -82,9 +82,9 @@ const employee = [
     regular: '170 Hours',
     overtime: '18 hours',
     sickleave: '-',
-    pto: 50,
-    paidholiday: '0%',
-    iron: '0%'
+    pto: '-',
+    paidholiday: 'Fullmoon of Warso',
+    iron: '188 Hours'
   },
   {
     name: 'Ma Naw Mar Mar',
@@ -92,9 +92,9 @@ const employee = [
     regular: '169 Hours',
     overtime: '18 hours',
     sickleave: '-',
-    pto: 38,
-    paidholiday: '0%',
-    iron: '2%'
+    pto: '-',
+    paidholiday: 'Fullmoon of Warso',
+    iron: '187 Hours'
   },
   {
     name: 'Ma Myat Thazin Aung',
@@ -102,9 +102,9 @@ const employee = [
     regular: '168 Hours',
     overtime: '18 hours',
     sickleave: '-',
-    pto: 562,
-    paidholiday: '0%',
-    iron: '45%'
+    pto: '-',
+    paidholiday: 'Fullmoon of Warso',
+    iron: '186 Hours'
   }
 ]
 
@@ -160,3 +160,7 @@ export default {
         </div>
     </div>
 </template>
+<style lang="sass">
+.q-table th
+  font-size: 15px !important
+</style>
